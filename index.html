@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap"
+      rel="stylesheet"
+    />
+    <title>blogs Collection</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="main">
+      <div>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <nav class="nav-links">
+          <ul>
+            <li><a href="#" class="scroll-link" data-filter="all">All</a></li>
+            <li>
+              <a href="#" class="scroll-link" data-filter="design">Design</a>
+            </li>
+            <li>
+              <a href="#" class="scroll-link" data-filter="dev">Development</a>
+            </li>
+            <li>
+              <a href="#" class="scroll-link" data-filter="marketing"
+                >Marketing</a
+              >
+            </li>
+          </ul>
+        </nav>
+
+        <div class="search-container">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search blog posts..."
+            oninput="searchBlogs()"
+          />
+        </div>
+      </div>
+
+      <!-- Hero Banner -->
+
+      <div class="main-content">
+        <h1>Welcome to the World of blogs</h1>
+        <p>
+          Discover a variety of beautiful blogs for your workspace and business.
+        </p>
+        <div class="ex-btn">
+          <a href="#" class="scroll-link">Explore More</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- blog Grid Section -->
+    <section id="blogs" class="blogs-section">
+      <h2>Blogs</h2>
+      <p>
+        "Turning Passion Into Purpose Through Words."<br />Crafting experiences
+        with design,<br />
+        Building connections through development and marketing.
+      </p>
+      <br />
+      <div class="blog-grid">
+        <div class="blog-card design" data-name="1">
+          <img src="assets/images/laptopBlog.png" alt="1/3" />
+          <h3>The Art of Creating a Luxurious Workspace</h3>
+          <p>
+            Transform your workspace into a haven of productivity and elegance.
+            Discover design tips to create a luxurious ambiance with textures,
+            lighting, and color palettes.
+          </p>
+          <p class="blog-meta">By Rihan Shah | Jan 20, 2025</p>
+        </div>
+        <div class="blog-card dev" data-name="2">
+          <img src="assets/images/webDevImg.png" alt="Web blog" />
+          <h3>Building Scalable Web Applications: A Developer’s Guide</h3>
+          <p>
+            Learn how to build scalable web applications with the right
+            architecture, efficient database management, and optimized
+            performance for seamless growth.
+          </p>
+          <p class="blog-meta">By Tech Guru | Feb 5, 2025</p>
+        </div>
+        <div class="blog-card marketing" data-name="3">
+          <img src="assets/images/markImg1.png" alt="Monstera Deliciosa" />
+          <h3>
+            Mastering the Art of Digital Marketing: Strategies for Success
+          </h3>
+          <p>
+            Unlock the secrets of effective digital marketing! From social media
+            engagement to personalized campaigns, explore strategies that drive
+            growth and captivate your audience in today's competitive landscape.
+          </p>
+          <p class="blog-meta">By Kasturi Raina | Jul 02, 2015</p>
+        </div>
+        <div class="blog-card design" data-name="4">
+          <img src="assets/images/design2.png" alt="Pothos" />
+          <h3>The Art of Minimalism: Designing with Purpose and Simplicity</h3>
+          <p>
+            Explore the elegance of minimalist design, where simplicity meets
+            functionality. Learn how to create clean, purposeful spaces that
+            enhance user experience.
+          </p>
+          <p class="blog-meta">By Rishikesh Jha | Feb 12, 2025</p>
+        </div>
+        <div class="blog-card marketing" data-name="5">
+          <img src="assets/images/markImg2.png" alt="Peace Lily" />
+          <h3>
+            Mastering the Art of Digital Storytelling: Captivate Your Audience
+            Online
+          </h3>
+          <p>
+            A graceful blog with dark green leaves and elegant white blooms, the
+            Peace Lily purifies the air and thrives in low to medium light with
+            moderate watering.
+          </p>
+          <p class="blog-meta">By Sunny Kumar | Feb 10, 2025</p>
+        </div>
+        <div class="blog-card dev" data-name="6">
+          <img src="assets/images/webDevImg1.png" alt="Cactus" />
+          <h3>
+            Building Scalable Web Applications: Best Practices for Modern
+            Developers
+          </h3>
+          <p>
+            Learn the best practices for building scalable web applications that
+            deliver exceptional performance and reliability in the modern
+            digital era.
+          </p>
+          <p class="blog-meta">By Niharika Sharma | Jan 01, 2020</p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      document.querySelectorAll(".blog-card").forEach((card) => {
+        card.addEventListener("click", function () {
+          const blogName = this.getAttribute("data-name");
+          window.location.href = `blog_detail.html?name=${encodeURIComponent(
+            blogName
+          )}`;
+        });
+      });
+
+      function searchBlogs() {
+        const input = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+        const blogCards = document.querySelectorAll(".blog-card");
+
+        blogCards.forEach((card) => {
+          const title = card.querySelector("h3").innerText.toLowerCase();
+          if (title.includes(input)) {
+            card.style.display = "block";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      }
+      document.addEventListener("DOMContentLoaded", () => {
+        const filterLinks = document.querySelectorAll("nav a");
+        const blogPosts = document.querySelectorAll(".blog-card");
+
+        filterLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+            const filter = link.getAttribute("data-filter");
+
+            blogPosts.forEach((post) => {
+              if (filter === "all" || post.classList.contains(filter)) {
+                post.style.display = "block";
+              } else {
+                post.style.display = "none";
+              }
+            });
+          });
+        });
+      });
+      document.addEventListener("DOMContentLoaded", () => {
+        const filterLinks = document.querySelectorAll(".scroll-link");
+        const blogPosts = document.querySelectorAll(".blog-post");
+
+        filterLinks.forEach((link) => {
+          link.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            // Smooth Scroll to the Blog Section
+            const targetSection = document.getElementById("blogs");
+            targetSection.scrollIntoView({ behavior: "smooth" });
+
+            // Filtering Blogs
+            const filter = link.getAttribute("data-filter");
+
+            blogPosts.forEach((post) => {
+              if (filter === "all" || post.classList.contains(filter)) {
+                post.style.display = "block";
+              } else {
+                post.style.display = "none";
+              }
+            });
+          });
+        });
+      });
+      function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('active');
+  // document.getElementsByClassName("nav-links")[0].style.display = "block";
+}
+    </script>
+  </body>
+</html>

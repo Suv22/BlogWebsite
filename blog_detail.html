@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Blog Comments</title>
+  </head>
+  <body class="blog-detail-body">
+    <div class="blog-post">
+      <img id="blogImage" src="" alt="blog Image" />
+      <div class="pl-details">
+        <h1 id="blogName"></h1>
+        <p id="blogDescription"></p>
+        <p id="blogTimestamp"></p>
+      </div>
+      <button class="add-comment-btn" onclick="openPopup()">Add Comment</button>
+      <div class="comments-section" id="comments-section">
+        <h3>Comments</h3>
+        <ul id="comment-list"></ul>
+      </div>
+    </div>
+
+    <!-- Comment Popup -->
+    <div class="popup-overlay" id="popup">
+      <div class="popup-card">
+        <h2>Add Your Comment</h2>
+        <input type="text" id="username" placeholder="Enter your name" />
+        <textarea id="comment" placeholder="Write your comment..."></textarea>
+        <button onclick="submitComment()">Submit Comment</button>
+        <button class="close-btn" onclick="closePopup()">Close</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

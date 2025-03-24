@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>blogs Collection</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="blog-body">
+
+    <!-- Hero Banner -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Welcome to the World of blogs</h1>
+            <p>Discover a variety of beautiful blogs for your home and garden.</p>
+        </div>
+    </header>
+
+    <!-- blog Grid Section -->
+    <section class="blogs-section">
+        <h2>Our blog Collection</h2>
+        <div class="blog-grid">
+            <div class="blog-card" data-name="Aloe Vera">
+                <img src="assets/images/Aloe Vera.png" alt="Aloe Vera">
+                <h3>Aloe Vera</h3>
+                <p>A hardy succulent known for its thick, fleshy leaves filled with soothing gel, Aloe Vera is prized for its medicinal and skincare benefits. It thrives in bright, indirect sunlight with minimal watering.</p>
+            </div>
+            <div class="blog-card" data-name="Snake blog">
+                <img src="assets/images/Snake blog (Sansevieria).png" alt="Snake blog">
+                <h3>Snake blog</h3>
+                <p>Also known as Mother-in-Law’s Tongue, the Snake blog is a low-maintenance, air-purifying blog with tall, upright leaves that thrive in low light and require minimal watering.</p>
+            </div>
+            <div class="blog-card" data-name="Monstera Deliciosa">
+                <img src="assets/images/Monstera Deliciosa.png" alt="Monstera Deliciosa">
+                <h3>Monstera Deliciosa</h3>
+                <p>Famous for its large, glossy, split leaves, Monstera Deliciosa adds a tropical touch to any space. It thrives in bright, indirect light and enjoys occasional watering.</p>
+            </div>
+            <div class="blog-card"data-name="Peace Lily">
+                <img src="assets/images/Peace Lily.png" alt="Peace Lily">
+                <h3>Peace Lily</h3>
+                <p>A graceful blog with dark green leaves and elegant white blooms, the Peace Lily purifies the air and thrives in low to medium light with moderate watering.</p>
+            </div>
+            <div class="blog-card"data-name="Rubber Plan">
+                <img src="assets/images/Rubber blog.png" alt="Cactus">
+                <h3>Rubber Plan</h3>
+                <p>With its thick, glossy leaves and rich green hues, the Rubber blog is a resilient indoor blog that thrives in bright, indirect light and requires minimal care.</p>
+            </div>
+            <div class="blog-card"data-name="Pothos">
+                <img src="assets/images/Pothos (Devil’s Ivy).png" alt="Pothos">
+                <h3>Pothos (Money blog)</h3>
+                <p>A fast-growing, trailing vine with heart-shaped leaves, Pothos is an easy-care blog that thrives in low light and helps purify the air. Perfect for hanging pots or tabletops.</p>
+            </div>
+            <div class="blog-card"data-name="Spider blog">
+                <img src="assets/images/Spider blog.png" alt="Pothos">
+                <h3>Spider blog</h3>
+                <p>A hardy and adaptable blog with arching green and white striped leaves, the Spider blog is excellent for air purification and thrives in bright, indirect light with minimal care.</p>
+            </div>
+            <div class="blog-card"data-name="Jade blog">
+                <img src="assets/images/Jade blog.png" alt="Pothos">
+                <h3>Jade blog</h3>
+                <p>A symbol of prosperity and good luck, the Jade blog is a low-maintenance succulent with thick, fleshy green leaves. It thrives in bright light and requires occasional watering.</p>
+            </div>
+            <div class="blog-card"data-name="Boston Fern">
+                <img src="assets/images/Boston Fern.png" alt="Pothos">
+                <h3>Boston Fern</h3>
+                <p>A lush, feathery blog with vibrant green fronds, the Boston Fern thrives in humid environments and indirect light, making it perfect for adding a fresh, airy touch to any space.</p>
+            </div>
+            <div class="blog-card"data-name="Fiddle-Leaf Fig">
+                <img src="assets/images/Fiddle-Leaf Fig.png" alt="Pothos">
+                <h3>Fiddle-Leaf Fig</h3>
+                <p>With its large, glossy, violin-shaped leaves, the Fiddle-Leaf Fig is a statement blog that thrives in bright, indirect light and adds a bold, tropical feel to any space.</p>
+            </div>
+            <div class="blog-card"data-name="Japanese Maple Bonsai">
+                <img src="assets/images/Japanese Maple Bonsai.png" alt="Pothos">
+                <h3>Japanese Maple Bonsai</h3>
+                <p>A miniature tree with delicate, lacy leaves that change color with the seasons, the Japanese Maple Bonsai brings elegance and tranquility, thriving in bright, indirect light with careful watering.</p>
+            </div>
+            <div class="blog-card"data-name="Calathea Or bifolia">
+                <img src="assets/images/Calathea Or bifolia.png" alt="Pothos">
+                <h3>Calathea Or bifolia</h3>
+                <p>Known for its striking, broad, silver-green leaves with delicate dark green stripes, Calathea Orbifolia thrives in low to medium light and high humidity, making it a perfect indoor decorative blog.</p>
+            </div>
+        </div>
+    </section>
+    <script>
+        document.querySelectorAll('.blog-card').forEach(card => {
+            card.addEventListener("click", function() {
+                const blogName = this.getAttribute("data-name");
+                window.location.href = `blog_details.html?name=${encodeURIComponent(blogName)}`;
+            });
+        });
+    </script>
+
+</body>
+</html>
