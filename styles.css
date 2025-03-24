@@ -10,6 +10,7 @@ body {
     /* background-attachment: fixed; */
     background-color: #ebcdda;
     text-align: center;
+    -webkit-tap-highlight-color: transparent;
 }
 
 ::-webkit-scrollbar {
@@ -446,7 +447,7 @@ nav li:hover {
         
     }
     .blog-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .main {
@@ -540,13 +541,21 @@ nav li:hover {
         height: 500px;
     }
     .main-content a {
-        margin-top: 20px;
+        margin-top: 0px;
         font-size: 18px;
+    }
+    .main-content{
+        margin-top: 90px;
+    }
+    .ex-btn{
+        padding: 10px 20px;
+        font-size: 14px;
+        margin-top: 40px;
     }
     .blogs-section{
         padding: 50px 20px 50px 20px;
         margin-top: -10vh;
-        margin: 0px -3px 0px 0px;
+        margin: 0px -3px 40px 0px;
     }
     .blogs-section h2 {
         font-size: 30px;
@@ -563,6 +572,9 @@ nav li:hover {
     .blog-card{
         width: 100%;
         height: 450px;
+    }
+    .blog-card:hover{
+        transform: none
     }
     .blog-card img {
         height: 200px;
@@ -600,7 +612,6 @@ nav li:hover {
         text-align: start;
     }
     .popup-overlay{
-        display: flex;
         justify-content: center;
         align-items: center;
         position: fixed;
